@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { ActivatedRoute } from '@angular/router';
+import { Contact } from '../contact';
 
 @Component({
   selector: 'app-contact-details',
@@ -12,25 +13,32 @@ export class ContactDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private contactService: ContactService,
-    private location: Location
-  ){}
+    // private location: Location
+  ) { }
+
+  contact?: Contact;
+
+  id: number = -1;
 
 
+  ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('index'));
+    this.getContact();
+  }
 
+  getContact(){
+     var oldContact = this.contactService.contacts[this.id];
+    this.contact = {
+      firstName: oldContact.firstName,
+      lastName: oldContact.lastName,
+      phoneNumber: oldContact.phoneNumber,
+      email:oldContact.email
+    }
+  }
 
-ngOnInit(): void{
-  this.getContact()
-}
+ 
 
-getContact(): void{
-  const id = Number(this.route.snapshot.paramMap.get('firstName'));
- // this.contactService.getContact(firstName)
-}
-
-
-editContact(firstName: string, lastName: string , phoneNumber: string, email: string): void {
-  // if (this.contacts){
-  //   this.contactService.editContact(this.contactd)
-  // }
-}
+  editContact(){
+    this.contactService.updateContact(this.id, this.contact!);
+  }
 }

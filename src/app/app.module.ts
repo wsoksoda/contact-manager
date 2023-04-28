@@ -11,6 +11,8 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './contact/contact.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { ContactComponent } from './contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

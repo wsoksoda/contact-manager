@@ -1,4 +1,8 @@
+<h1>Contact List</h1>
+<div class = display>
 <app-contact
 *ngFor="let con of contact; let i = index"
-[contact]="con"
-[id] = "i"></app-contact>
+[index]="i"
+></app-contact>
+
+</div>

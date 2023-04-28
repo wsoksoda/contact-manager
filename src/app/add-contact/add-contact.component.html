@@ -1,6 +1,8 @@
+<h1>Add Contact</h1>
+
 <div class = "row">
 <div class="mx-auto col-10 col-md-8 col-lg-6">
-<form>
+<form #addContact = "ngForm" (ngSubmit)="onCreateContact(firstName.value,lastName.value,phoneNumber.value,email.value)">
     <div class="form-group">
       <label for="exampleInputEmail1">First Name</label>
       <input type="text" class="form-control" id="firstName" #firstName  placeholder="First Name">
@@ -17,10 +19,7 @@
       <label for="exampleInputPassword1">Email</label>
       <input type="email" class="form-control" id="email" #email placeholder="Email">
     </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Favorite</label>
-    </div>
-    <button type="submit" class="btn btn-primary" (click) = "onCreateContact(firstName.value,lastName.value,phoneNumber.value,email.value)">Submit</button>
+    <button type = "submit" class="btn btn-primary" >Submit</button>
   </form>
+</div>
 </div>

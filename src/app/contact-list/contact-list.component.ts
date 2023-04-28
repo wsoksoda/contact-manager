@@ -8,7 +8,6 @@ import { Contact } from '../contact';
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css'],
-  providers: [ContactService]
 })
 export class ContactListComponent implements OnInit {
 
@@ -16,13 +15,9 @@ export class ContactListComponent implements OnInit {
 
   constructor(private contactService: ContactService){}
 
-
   ngOnInit(){
     this.contact = this.contactService.contacts;
   }
-  
-onAccountAdded(newAccount: {firstName:string, lastName: string, phoneNumber: string, email: string}){
-  
-}
+
 
 }

@@ -24,18 +24,21 @@ export class ContactService {
 
   constructor() { }
 
-  
+  getId(contact:Contact): number{
+    return this.contacts.indexOf(contact)
+  }
 
   addContact(firstName: string, lastName:string, phoneNumber: string, email: string): void{
      this.contacts.push({firstName,lastName,phoneNumber,email});
-     
   };
 
-  editContact(contact: {firstName: string; lastName: string ; phoneNumber: string; email: string}){
-
+  updateContact(index: number, contact:Contact){
+    this.contacts[index] = contact;
   }
 
   deleteContact(id: number) {
     this.contacts.splice(id, 1);
   }
 }
+
+

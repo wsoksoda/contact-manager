@@ -4,8 +4,7 @@ import { ContactService } from '../contact.service';
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
-  styleUrls: ['./add-contact.component.css'],
-  providers: [ContactService]
+  styleUrls: ['./add-contact.component.css']
 })
 export class AddContactComponent {
   constructor(private contactService: ContactService){}

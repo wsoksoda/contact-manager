@@ -1,10 +1,10 @@
 <ul class = "list">
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">{{contact.firstName}} {{contact.lastName}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{contact.phoneNumber}}</h6>
-          <p class="card-text">{{contact.email}}</p>
-          <button type="button" class="btn btn-info" routerLink="/edit-contact/{{contact.firstName}}">Edit</button>
+          <h2 class="card-title">{{contact!.firstName}} {{contact!.lastName}}</h2>
+          <h4 class="card-subtitle mb-2 text-muted">{{contact!.phoneNumber}}</h4>
+          <p class="card-text">{{contact!.email}}</p>
+          <button type="button" class="btn btn-info" routerLink="/contact-details/{{index}}">Edit</button>
           <button type="button" class="btn btn-danger" (click) = "deleteContact()">Delete Contact</button>
         </div>
       </div>
